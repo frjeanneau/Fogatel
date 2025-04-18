@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fogatel - Connecting DeepTech Innovation Across Borders</title>
+<link href="/assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/favicon/favicon.ico" rel="shortcut icon"/>
+<link href="/assets/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<meta content="MyWebSite" name="apple-mobile-web-app-title"/>
+<link href="/assets/site.webmanifest" rel="manifest"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #fff; color: #000; }
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #eee;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    header img { height: 80px; }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a { font-weight: normal;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      position: relative;
+      margin-left: 2rem;
+    }
+    nav a:hover {
+      color: #003399;
+    }
+    nav a::before {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 20px;
+      background-color: #FFCC00;
+      transform: rotate(45deg);
+      margin-right: 8px;
+    }
+    nav a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #FFCC00;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+    }
+    nav a:hover::after, nav a:focus::after, nav a.active::after {
+      width: 100%;
+    }
+    .banner-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      margin-top: 80px;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+    h1, h2 { color: #003399; margin-bottom: 1rem; }
+    .highlight { color: #FFCC00; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .section-header-bar {
+      width: 2px;
+      height: 40px;
+      background-color: #FFCC00;
+      transform: rotate(45deg);
+      margin-right: 1rem;
+    }
+    .expertise-intro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .expertise-intro-left {
+      flex: 1;
+      min-width: 250px;
+    }
+    .expertise-intro-left h3 {
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    .expertise-intro-right {
+      flex: 2;
+      min-width: 250px;
+    }
+    .expertise-intro-right p {
+      margin-bottom: 1rem;
+    }
+    .expertise-intro-right ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    .expertise-intro-right ul li {
+      margin-bottom: 0.5rem;
+    }
+    .grid-card-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .grid-card {
+      border: 1px solid #003399;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: left;
+      overflow: hidden;
+    }
+    .grid-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .grid-card h3, .grid-card p {
+      padding: 0 1rem;
+    }
+    .grid-card h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 1rem 0 0.5rem 0;
+      color: #000;
+    }
+    .grid-card p {
+      margin-bottom: 1rem;
+    }
+
+
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Force exactly 2 columns */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-member {
+  text-align: center;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid #003399;
+}
+
+.team-member h3 {
+  color: #003399;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+
+
+    footer {
+      background: #003399;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Roboto', sans-serif;
+    }
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .footer-link img {
+      height: 24px;
+      margin-right: 10px;
+    }
+    .footer-link:hover {
+      color: #FFCC00;
+    }
+    .footer-copy {
+      color: #FFCC00;
+      margin-top: 1rem;
+    }
+  
+.section-wrapper {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem;
+}
+
+/* Make logo clickable with a hand cursor and a hover effect */
+header a img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+header a img:hover {
+  transform: scale(1.05);
+
+
+
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  header img {
+    height: 50px;
+  }
+}
+</style>
+</link>
+<style>
+@media (max-width: 768px) {
+  .grid-card-container {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<script>
+function toggleMenu() {
+  var nav = document.querySelector("nav");
+  nav.classList.toggle("open");
+}
+</script>
+<style>
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+nav.open {
+  display: flex !important;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+
+
+
+}
+</style>
+<a href="#top">
+<img alt="Fogatel Logo with Tagline" src="assets/logo-yellow-star-tagline.jpeg"/>
+</a>
+<nav>
+<a href="#banner">Our Expertise</a>
+<a href="#stories">Case Studies</a>
+<a href="#people">People</a>
+<a href="#contact">Contact Us</a>
+</nav>
+</header>
+<div id="banner">
+<img alt="Banner Image" class="banner-image" src="assets/banner-what-we-do.jpg"/>
+</div>
+<div class="section-wrapper"><section id="what">
+<div class="section-header">
+<div class="section-header-bar"></div>
+<h2 style="font-weight: normal; font-size: 1.5rem;">OUR EXPERTISE</h2>
+</div>
+<div class="expertise-intro">
+<div class="expertise-intro-left">
+<h3>Connecting DeepTech Innovation Across Borders</h3>
+</div>
+<div class="expertise-intro-right">
+<p>Fogatel helps international deeptech startups, especially from Europe, navigate business development and partnerships in the North American market. Our team connects companies with strategic allies, investors, and opportunities, enabling bold growth and impact.</p>
+<ul>
+<li>Semiconductor</li>
+<li>Robotics</li>
+<li>Quantum Computing</li>
+<li>Advanced Materials</li>
+<li>CleanTech</li>
+<li>SpaceTech</li>
+<li>Photonics</li>
+<li>Advanced Manufacturing</li>
+</ul>
+</div>
+</div>
+<div class="grid-card-container">
+<div class="grid-card">
+<img alt="Business Development" src="assets/banner-business-development.jpg"/>
+<h3>Business Development</h3>
+<p>We help you identify and build relationships with key stakeholders, strategic partners, and early customers. From introductions to deal-making, we accelerate your path to market traction.</p>
+</div>
+<div class="grid-card">
+<img alt="Go-to-Market Strategy" src="assets/banner-go-to-market-strategy.jpg"/>
+<h3>Go-to-Market Strategy</h3>
+<p>We craft data-driven go-to-market strategies tailored to your industry, product, and target audience. Our goal: ensure a strong market entry and sustained commercial growth in North America.</p>
+</div>
+<div class="grid-card">
+<img alt="Sales" src="assets/banner-sales.jpg"/>
+<h3>Sales</h3>
+<p>We support your sales efforts with localized insights, lead qualification, and trusted network access. Whether you’re launching or scaling, we help drive real revenue outcomes.</p>
+</div>
+<div class="grid-card">
+<img alt="Legal, HR and Financial Support" src="assets/banner-legal-and-financial-support.jpg"/>
+<h3>Legal, HR and Financial Support</h3>
+<p>Through our network of seasoned experts, we connect you with reliable legal, human ressources and financial professionals to navigate regulatory compliance, company setup, contracts, and funding logistics.</p>
+</div>
+</div>
+</section></div>
+<div id="stories">
+</div>
+<div class="section-wrapper"><section>
+<div class="section-header">
+<div class="section-header-bar"></div>
+<h2 style="font-weight: normal;">CASE STUDIES</h2>
+</div>
+<div class="expertise-intro">
+<div class="expertise-intro-left">
+<h3>Multiple Industries and Business Models</h3>
+</div>
+<div class="expertise-intro-right">
+<p>At Fogatel, we’ve partnered with deeptech companies across a broad spectrum of industries—including consumer electronics, displays, mobile devices, automotive, aeronautics, space, and medtech. </p>
+<p>Our experience spans various business models, such as IP licensing, fabless semiconductor operations, and full-stack product commercialization. </p>
+<p>We’ve helped bring to market technologies ranging from advanced materials and film-based solutions to sensors, photonics, embedded systems, robotics, and fully integrated hardware products. No matter the domain, our team tailors each engagement to accelerate our clients’ success in the North American market.</p>
+ Here are a few examples of client engagements
+</div>
+</div>
+<div class="grid-card-container">
+<div class="grid-card">
+<img alt="Case Study 1" src="assets/banner-case-studie1.jpg"/>
+<h3>Smart Surfaces with Touch-Sensitive Wood</h3>
+<p>A European startup developed a sustainable, transparent, and touch-sensitive wood with wide applications in smart surfaces—from automotive to luxury interiors.</p>
+<p>Fogatel defined a go-to-market strategy and led business development efforts with top CE OEMs including Bose, Microsoft, Amazon, Google, Apple, Facebook, Sonos, and Tesla—opening doors to key partnerships and pilot projects.</p>
+</div>
+<div class="grid-card">
+<img alt="Case Study 3" src="assets/banner-case-studie3.jpg"/>
+<h3>Multi-Touch Tech for Consumer Electronics</h3>
+<p>A French company developed an innovative touchscreen solution for consumer electronics. Fogatel led North American business development and sales, licensing the technology to a semiconductor vendor and a tier-one OEM, and introducing it to leading brands like Google, Microsoft, Dell, and Samsung.</p>
+</div>
+<div class="grid-card">
+<img alt="Case Study 6" src="assets/banner-case-studie6.jpg"/>
+<h3>Flexible Silver Nanowire Electrodes </h3>
+<p>A company developed a scalable manufacturing process for silver nanowires, enabling the production of transparent and flexible electrodes for next-generation touchscreens, OLEDs, and OPV devices.</p>
+<p>Fogatel supported sales growth in emerging applications, leading to multi-million-dollar revenue and over 10 design wins with major OEMs including 3M, Lenovo, HP, Dell, Google, Amazon, and Microsoft.</p>
+</div>
+<div class="grid-card">
+<img alt="Case Study 4" src="assets/banner-case-studie4.jpg"/>
+<h3>micro-LED Technology </h3>
+<p>A company pioneering scalable micro-LED displays that integrate high-luminance LEDs with silicon transistors on a single wafer using standard semiconductor processes.</p>
+<p>Fogatel led business development efforts. We secured and negotiated a development and licensing agreement with a leading global display manufacturer, positioning the company for commercial success.</p>
+</div>
+<div class="grid-card">
+<img alt="Case Study 5" src="assets/banner-case-studie5.jpg"/>
+<h3>Touch-Sensitive Robotics </h3>
+<p>A company developing next-generation sensory technology that enables machines to feel touch—paving the way for seamless collaboration between humans and robots.</p>
+<p>Fogatel helped redefine the go-to-market strategy, focusing the product offering on a specific high-impact application.</p>
+</div>
+<div class="grid-card">
+<img alt="Case Study 2" src="assets/banner-case-studie2.jpg"/>
+<h3>Secure Temperature Sensing Technology</h3>
+<p>Fogatel supported a UK startup developing the world’s first secure temperature sensor, combining cybersecurity and sensing in a single chip. We crafted their go-to-market strategy and facilitated introductions to strategic partners in semiconductors, IoT, and industrial automation.</p>
+</div>
+</div>
+</section></div>
+<div id="people">
+</div>
+<div class="section-wrapper"><section>
+<div class="section-header">
+<div class="section-header-bar"></div>
+<h2 style="font-weight: normal;">PEOPLE</h2>
+</div>
+<div class="expertise-intro">
+<div class="expertise-intro-left">
+<h3>A Strategic, Multidisciplinary Team With Deep-Tech Expertise</h3>
+</div>
+<div class="expertise-intro-right">
+<p>The Fogatel team combines deep experience in venture building, finance, law, and technology commercialization. With backgrounds in startups, global corporations, and investment, we help early-stage companies scale and succeed. </p>
+<p>Our experts have launched and grown ventures in sectors like advanced materials, displays, IoT, and clean tech. From strategy to execution, we bring hands-on support to navigate complexity, secure partnerships, and unlock market opportunities.</p>
+</div>
+</div>
+<div class="team-grid">
+
+<div class="team-member">
+<img alt="Francois Jeanneau" src="assets/francois.jpg" />
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px; text-align: center;">
+  <a href="https://www.linkedin.com/in/francoisjeanneau/" target="_blank">
+    <img src="assets/LinkedIn.jpg" alt="LinkedIn" style="width: 30px; height: 30px; border-radius: 0;" />
+  </a>
+  <h3 style="margin: 0;">Francois Jeanneau</h3>
+</div>
+<p><b>Founder &amp; CEO. </b></p>
+<p>Francois Jeanneau is an accomplished technology executive and venture builder with over 20 years of leadership experience in deep-tech innovation, corporate development, and startup growth. He has a proven track record of commercializing advanced technologies, scaling early-stage ventures, and forging high-impact strategic partnerships across industries such as advanced materials, IoT, photonics, semiconductors, and clean technologies. Francois combines strategic vision with hands-on execution, bringing deep expertise in M&amp;A, venture building, and innovation leadership. Passionate about creating meaningful impact through technology, he thrives in roles that demand bold thinking, disciplined execution, and the ability to navigate complexity while building exceptional teams.</p>
+</div>
+
+
+
+
+
+<div class="team-member">
+<img alt="Linda Ara" src="assets/linda.jpg" />
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px; text-align: center;">
+  <a href="https://www.linkedin.com/in/linda-ara-a00b553/" target="_blank">
+    <img src="assets/LinkedIn.jpg" alt="LinkedIn" style="width: 30px; height: 30px; border-radius: 0;" />
+  </a>
+  <h3 style="margin: 0;">Linda Ara</h3>
+</div>
+<p><b>Expert Finance</b></p>
+<p>Linda's career has focused on working with venture-backed startups, typically as consulting Chief Financial Ofﬁcer. Bringing skill with strategic planning, ﬁnancial modelling, and ﬁnancial management to client companies, Linda works closely with the management team to assess cash needs and successfully close investment ﬁnancing rounds. She started her career with Wells Fargo Bank, and has recently worked with NextWave Pharmaceuticals (sold to Pﬁzer), NuMedii, Kai Pharmaceuticals (sold to Amgen), and Scios. Linda has a BA degree from UC Berkeley and lives in Palo Alto.</p>
+
+<p>She offers a full range of legal services tailored to startups, including incorporation, financings, stock option plans, contracts, M&A, securities compliance, and ongoing corporate governance.</p>
+</div>
+
+
+
+
+<div class="team-member">
+<img alt="Sri Peruvemba" src="assets/sri.jpg" />
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px; text-align: center;">
+  <a href="https://www.linkedin.com/in/peruvemba/" target="_blank">
+    <img src="assets/LinkedIn.jpg" alt="LinkedIn" style="width: 30px; height: 30px; border-radius: 0;" />
+  </a>
+  <h3 style="margin: 0;">Sri Peruvemba </h3>
+</div>
+<p><b>Expert Business Strategy &amp; Marketing Communications </b></p>
+<p>Sri Peruvemba is CEO of Marketer International Inc. Peruvemba was previously Chief Marketing
+Officer for E Ink, where he played a major role in transforming the startup to a $1B+ global
+company. With over 30 years of experience in the technology industry, Peruvemba has been an
+influential advocate in the advancement of electronic hardware technologies. He is an
+acknowledged expert on electronic displays, materials and related technologies; and consults,
+writes, and presents on those subjects globally. Peruvemba has also held senior level positions
+at Sharp Corp, Cambrios, Novasentis, TFS Inc., Planar Systems, and Suntronic Technology.
+Based in Silicon Valley, Peruvemba advises high tech firms in the U.S., Canada, and Europe as
+well as serves on the boards of Azumo, Omniply, SmartKem, Visionect and WiSA Technologies.
+Peruvemba is a Contributing Editor for Information Display, and the recipient of SID’s Lewis and
+Beatrice Winner Award. He has BS and MBA degrees and a post-graduate diploma in
+management. Peruvemba is also a right arm off-spinner for a Cricket team he co-founded in
+Silicon Valley.</p>
+</div>
+
+
+
+
+<div class="team-member">
+<img alt="Susan Morgan" src="assets/susan.jpg" />
+<div style="display: flex; justify-content: center; align-items: center; gap: 8px; text-align: center;">
+  <a href="https://www.linkedin.com/in/susan0morgan/" target="_blank">
+    <img src="assets/LinkedIn.jpg" alt="LinkedIn" style="width: 30px; height: 30px; border-radius: 0;" />
+  </a>
+  <h3 style="margin: 0;">Susan Morgan</h3>
+</div>
+<p><b>Expert Legal</b></p>
+<p>Susan is an entrepreneur-turned-lawyer with deep experience supporting tech startups. She co-founded Softview, Inc., which created the pioneering tax software MacInTax and TaxView—products later acquired by Intuit. After selling the company, she earned her law degree and spent seven years at a major Silicon Valley firm before founding her own boutique practices. Susan brings a rare dual perspective as both founder and legal advisor, helping entrepreneurs navigate the legal challenges of building a business.</p>
+
+<p>She offers a full range of legal services tailored to startups, including incorporation, financings, stock option plans, contracts, M&A, securities compliance, and ongoing corporate governance.</p>
+</div>
+
+
+
+<!-- Add more team-member divs as needed -->
+
+<!-- Add more team-member divs as needed -->
+</div>
+</section></div>
+<div class="section-wrapper"><section id="contact">
+<div class="section-header">
+<div class="section-header-bar"></div>
+<h2 style="font-weight: normal;">CONTACT US</h2>
+</div>
+
+
+<p> Office:</p>
+<p>2560 Ninth Street, </p>
+<p>Suite 214B Berkeley, </p>
+<p>CA 94710 - USA</p>
+
+<br>
+<p>Interested in working with Fogatel? Reach out to us today!</p>
+<br>
+<form action="https://formspree.io/f/mjkydwzp" method="POST" style="max-width: 600px; margin: auto;">
+<div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+<label style="flex: 1;">
+      Your First Name
+      <input name="first-name" required="" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;" type="text"/>
+</label>
+<label style="flex: 1;">
+      Your Last Name
+      <input name="last-name" required="" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;" type="text"/>
+</label>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label>
+      Your Company Name
+      <input name="company-name" required="" style="width: 70%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;" type="text"/>
+</label>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label>
+      Your Company Website
+      <input name="company-website" required="" style="width: 70%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;" type="text"/>
+</label>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label>
+      Your Email
+      <input name="email" required="" style="width: 70%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;" type="email"/>
+</label>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<label>
+      Message
+      <textarea name="message" required="" rows="6" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+</label>
+</div>
+<div style="text-align: center;">
+<button style="padding: 0.75rem 1.5rem; background-color: #003399; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;" type="submit">
+      Send Message
+    </button>
+</div>
+<p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">We’ll get back to you as soon as possible.</p>
+</form>
+</section></div>
+<footer>
+<a class="footer-link" href="https://www.linkedin.com/in/francoisjeanneau/" target="_blank">
+<img alt="LinkedIn Logo" src="assets/linkedin-logo-png-25.png"/>
+      Connect With Us
+    </a>
+<p> Fogatel - 2560 Ninth Street, Suite 214B Berkeley, CA 94710 </p>
+<p class="footer-copy">© 2025 Fogatel. All rights reserved.</p>
+</footer>
+<script>
+document.querySelectorAll("nav a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    var nav = document.querySelector("nav");
+    if (nav.classList.contains("open")) {
+      nav.classList.remove("open");
+    }
+  });
+});
+</script></body>
+</html>
