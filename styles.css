@@ -43,3 +43,7 @@ input,textarea{font-size:16px}
 
 /* Two readable case-study columns on tablets. */
 @media(min-width:481px) and (max-width:1050px){.cases{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Separate the technology list from the service columns. */
+.services + .sectors{margin-top:40px}
+@media(max-width:760px){.services + .sectors{margin-top:32px}}
