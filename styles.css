@@ -20,7 +20,23 @@
 .atlantic-visual figcaption{max-width:none;width:100%;text-align:center;font-size:clamp(10px,1.04vw,15px);white-space:nowrap}
 @media(max-width:760px){.atlantic-visual figcaption{font-size:14px;white-space:normal}}
 
-.atlantic-visual figcaption{padding-top:24px;font-size:14px;letter-spacing:.01em}
-@media(max-width:760px){.atlantic-visual figcaption{padding-top:18px;font-size:13px}}
+.atlantic-visual figcaption{padding-top:24px;font-size:17px;letter-spacing:.01em;white-space:normal;text-wrap:balance}
+@media(max-width:760px){.atlantic-visual figcaption{padding-top:18px;font-size:15px}}
 
 .industry-focus{margin-top:28px}
+
+@media(max-width:760px){input,textarea{font-size:16px}}
+
+/* Consistent reading sizes across desktop and mobile. */
+.section-heading>p,.services p,.support p,.case p,.founder-copy p:not(.eyebrow):not(.founder-lead),.network-heading p,.specialist p:not(.independent),.contact-grid>div>p:not(.eyebrow){font-size:16px;line-height:1.7}
+.eyebrow,.case .eyebrow,.specialist .eyebrow,.founder-copy .eyebrow,.service-number{font-size:12px;line-height:1.5;letter-spacing:.13em}
+.sectors span,.specialist p.independent,.contact label,.form-note,footer{font-size:14px}
+nav,.button,.text-link,.inline-link,.support a,.specialist a,.case summary,.menu-toggle{font-size:15px}
+input,textarea{font-size:16px}
+.hero-actions{flex-wrap:wrap}
+.case summary{min-height:44px}
+.specialist a{padding:8px 0}
+@media(max-width:760px){.hero-intro{font-size:16px}.menu-toggle{min-height:44px}.atlantic-visual figcaption{font-size:16px}.case h3{font-size:23px}}
+
+.atlantic-map text{font-size:15px;letter-spacing:1px}
+@media(max-width:760px){.atlantic-map text{font-size:22px;letter-spacing:.5px}}
